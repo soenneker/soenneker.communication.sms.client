@@ -1,5 +1,6 @@
 using Azure.Communication.Sms;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Soenneker.Communication.Sms.Client.Abstract;
@@ -9,5 +10,5 @@ namespace Soenneker.Communication.Sms.Client.Abstract;
 /// </summary>
 public interface ISmsClientUtil : IDisposable, IAsyncDisposable
 {
-    ValueTask<SmsClient> Get();
+    ValueTask<SmsClient> Get(CancellationToken cancellationToken = default);
 }

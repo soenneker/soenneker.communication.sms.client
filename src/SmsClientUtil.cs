@@ -5,6 +5,7 @@ using Soenneker.Communication.Sms.Client.Abstract;
 using Soenneker.Extensions.Configuration;
 using Soenneker.Utils.AsyncSingleton;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Soenneker.Communication.Sms.Client;
@@ -28,9 +29,9 @@ public class SmsClientUtil: ISmsClientUtil
         });
     }
 
-    public ValueTask<SmsClient> Get()
+    public ValueTask<SmsClient> Get(CancellationToken cancellationToken = default)
     {
-        return _client.Get();
+        return _client.Get(cancellationToken);
     }
 
     public void Dispose()
