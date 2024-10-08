@@ -46,6 +46,6 @@
         <PackageReference Include="Soenneker.Extensions.Configuration" Version="2.1.453" />
         <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="2.1.402" />
         <PackageReference Include="Azure.Communication.Sms" Version="1.0.1" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
     </ItemGroup>
 </Project>
