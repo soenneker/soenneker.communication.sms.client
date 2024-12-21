@@ -1,5 +1,3 @@
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 using Soenneker.Communication.Sms.Client.Abstract;
 using Soenneker.Tests.FixturedUnit;
 using Xunit;
@@ -15,5 +13,11 @@ public class SmsClientUtilTests : FixturedUnitTest
     public SmsClientUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
     {
         _util = Resolve<ISmsClientUtil>(true);
+    }
+
+    [Fact]
+    public void Default()
+    {
+
     }
 }

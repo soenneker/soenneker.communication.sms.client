@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using Soenneker.Fixtures.Unit;
 using Soenneker.Utils.Test;
+using Soenneker.Communication.Sms.Client.Registrars;
 
 namespace Soenneker.Communication.Sms.Client.Tests;
 
@@ -24,5 +25,7 @@ public class Fixture : UnitFixture
 
         IConfiguration config = TestUtil.BuildConfig();
         services.AddSingleton(config);
+
+        services.AddSmsClientUtilAsScoped();
     }
 }
