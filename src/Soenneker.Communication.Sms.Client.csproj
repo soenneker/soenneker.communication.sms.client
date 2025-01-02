@@ -14,7 +14,7 @@
         <AssemblyName>Soenneker.Communication.Sms.Client</AssemblyName>
         <PackageId>Soenneker.Communication.Sms.Client</PackageId>
         <PackageTags>communication sms client azure services text phone smsclientutil util csharp dotnet c# .net</PackageTags>
-        <Copyright>Copyright © 2024 Jake Soenneker</Copyright>
+        <Copyright>Copyright © 2024-2025 Jake Soenneker</Copyright>
         <Authors>Jake Soenneker</Authors>
         <Company>https://soenneker.com</Company>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
