@@ -1,5 +1,4 @@
-﻿```
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Soenneker.Communication.Sms.Client.Abstract;
 
@@ -28,4 +27,3 @@ public static class SmsClientUtilRegistrar
         return services;
     }
 }
-```
