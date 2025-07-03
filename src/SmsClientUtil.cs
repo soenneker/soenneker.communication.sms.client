@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Soenneker.Communication.Sms.Client;
 
 /// <inheritdoc cref="ISmsClientUtil"/>
-public class SmsClientUtil: ISmsClientUtil
+public sealed class SmsClientUtil: ISmsClientUtil
 {
     private readonly AsyncSingleton<SmsClient> _client;
 
@@ -23,9 +23,7 @@ public class SmsClientUtil: ISmsClientUtil
 
             var connectionString = configuration.GetValueStrict<string>("Azure:CommunicationServices:ConnectionString");
 
-            var smsClient = new SmsClient(connectionString);
-            
-            return smsClient;
+            return new SmsClient(connectionString);
         });
     }
 
@@ -36,15 +34,11 @@ public class SmsClientUtil: ISmsClientUtil
 
     public void Dispose()
     {
-        GC.SuppressFinalize(this);
-
         _client.Dispose();
     }
 
     public ValueTask DisposeAsync()
     {
-        GC.SuppressFinalize(this);
-
         return _client.DisposeAsync();
     }
 }
