@@ -14,17 +14,23 @@ namespace Soenneker.Communication.Sms.Client;
 public sealed class SmsClientUtil: ISmsClientUtil
 {
     private readonly AsyncSingleton<SmsClient> _client;
+    private readonly ILogger<SmsClientUtil> _logger;
+    private readonly IConfiguration _configuration;
 
     public SmsClientUtil(ILogger<SmsClientUtil> logger, IConfiguration configuration)
     {
-        _client = new AsyncSingleton<SmsClient>(() =>
-        {
-            logger.LogInformation("Connecting Azure Communication SMS Client...");
+        _logger = logger;
+        _configuration = configuration;
+        _client = new AsyncSingleton<SmsClient>(CreateClient);
+    }
 
-            var connectionString = configuration.GetValueStrict<string>("Azure:CommunicationServices:ConnectionString");
+    private SmsClient CreateClient()
+    {
+        _logger.LogInformation("Connecting Azure Communication SMS Client...");
 
-            return new SmsClient(connectionString);
-        });
+        var connectionString = _configuration.GetValueStrict<string>("Azure:CommunicationServices:ConnectionString");
+
+        return new SmsClient(connectionString);
     }
 
     public ValueTask<SmsClient> Get(CancellationToken cancellationToken = default)
