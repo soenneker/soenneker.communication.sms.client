@@ -1,21 +1,19 @@
 using Soenneker.Communication.Sms.Client.Abstract;
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
-
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Communication.Sms.Client.Tests;
 
-[Collection("Collection")]
-public class SmsClientUtilTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class SmsClientUtilTests : HostedUnitTest
 {
     private readonly ISmsClientUtil _util;
 
-    public SmsClientUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public SmsClientUtilTests(Host host) : base(host)
     {
         _util = Resolve<ISmsClientUtil>(true);
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
