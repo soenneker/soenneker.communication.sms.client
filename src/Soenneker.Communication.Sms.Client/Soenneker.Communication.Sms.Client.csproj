@@ -44,7 +44,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Extensions.Configuration" Version="4.0.816" />
+        <PackageReference Include="Soenneker.Extensions.Configuration" Version="4.0.817" />
         <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="4.0.786" />
         <PackageReference Include="Azure.Communication.Sms" Version="1.0.2" />
     </ItemGroup>
