@@ -11,9 +11,9 @@ namespace Soenneker.Communication.Sms.Client.Abstract;
 public interface ISmsClientUtil : IDisposable, IAsyncDisposable
 {
     /// <summary>
-    /// Gets the value.
+    /// Returns the configured sms Client used by the sms client.
     /// </summary>
-    /// <param name="cancellationToken">The cancellation token.</param>
-    /// <returns>A task containing the result of the operation.</returns>
+    /// <param name="cancellationToken">Token used to cancel the operation.</param>
+    /// <returns>A task whose result is the requested sms Client.</returns>
     ValueTask<SmsClient> Get(CancellationToken cancellationToken = default);
 }

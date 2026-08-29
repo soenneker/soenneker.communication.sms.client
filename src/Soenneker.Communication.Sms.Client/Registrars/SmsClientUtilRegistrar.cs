@@ -12,6 +12,8 @@ public static class SmsClientUtilRegistrar
     /// <summary>
     /// Adds <see cref="ISmsClientUtil"/> as a singleton service. <para/>
     /// </summary>
+    /// <param name="services">Service collection that receives the registration.</param>
+    /// <returns>The same service collection, so additional registrations can be chained.</returns>
     public static IServiceCollection AddSmsClientUtilAsSingleton(this IServiceCollection services)
     {
         services.TryAddSingleton<ISmsClientUtil, SmsClientUtil>();
@@ -21,6 +23,8 @@ public static class SmsClientUtilRegistrar
     /// <summary>
     /// Adds <see cref="ISmsClientUtil"/> as a scoped service. <para/>
     /// </summary>
+    /// <param name="services">Service collection that receives the registration.</param>
+    /// <returns>The same service collection, so additional registrations can be chained.</returns>
     public static IServiceCollection AddSmsClientUtilAsScoped(this IServiceCollection services)
     {
         services.TryAddScoped<ISmsClientUtil, SmsClientUtil>();
