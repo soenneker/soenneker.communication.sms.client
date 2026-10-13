@@ -28,7 +28,7 @@ public sealed class SmsClientUtil: ISmsClientUtil
     {
         _logger.LogInformation("Connecting Azure Communication SMS Client...");
 
-        var connectionString = _configuration.GetValueStrict<string>("Azure:CommunicationServices:ConnectionString");
+        var connectionString = _configuration.GetStringStrict("Azure:CommunicationServices:ConnectionString");
 
         return new SmsClient(connectionString);
     }
